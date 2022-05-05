@@ -57,3 +57,7 @@
       - A la hora de tener tema ligth/dark
       - Tener app por idiomas
       - Para solventar esto, mas adelante se veran otros Patrones de Componentes mas robustos
+
+
+  -- Hasta este punto nuestros Componentes NO aceptan styles personalizados
+    - Para poder solventar esto se aplicara el    Patron Extensible Styles
