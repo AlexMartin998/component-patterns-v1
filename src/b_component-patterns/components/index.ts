@@ -7,8 +7,8 @@ import { ProductCardHOCProps } from '../interfaces/interfaces';
 
 // export * from './ProductCard';
 export * from './ProductButtons';
-export * from './ProductImage';
-export * from './ProductTitle';
+export { ProductImg } from './ProductImage';
+export { ProductTitle } from './ProductTitle';
 
 // // NO funciona el  spread operatos - Necesitamos q se hagan setters?
 export const ProductCard: ProductCardHOCProps = Object.assign(ProductCardHOC, {
