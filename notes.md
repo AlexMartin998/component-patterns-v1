@@ -67,3 +67,5 @@
         - Asi, dependiendo de si existe el  onChange y Value?  sabremos q el user es el q quiere tener el control.
         - Pero si no tiene estas propiedades, no solo NO tendra el control, sino q tampoco tendra la sincronizacion entre las cards en ambas direcciones.
           - La sincronia solo existira para el Card q tenga el  value={}
+          - Si no tiene el value no haria falta reaccionar en el del cart al onChange?
+            - Solo en el card principal
