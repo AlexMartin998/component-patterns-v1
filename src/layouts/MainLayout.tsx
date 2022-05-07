@@ -1,6 +1,6 @@
 import { Outlet, NavLink } from 'react-router-dom';
 
-import logo from '../logo.svg';
+import logo from './../logo.svg';
 
 export const MainLayout = () => {
   const isActiveFx = ({ isActive }: { isActive: boolean }): string =>
@@ -17,7 +17,7 @@ export const MainLayout = () => {
               to="/"
               className={({ isActive }) => (isActive && 'nav-active') || ''}
             >
-              Shopping
+              Home
             </NavLink>
           </li>
           <li>

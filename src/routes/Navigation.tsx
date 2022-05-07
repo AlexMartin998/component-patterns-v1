@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { ShoppingPage } from '../b_component-patterns/pages/ShoppingPage';
 import { MainLayout } from '../layouts/MainLayout';
 
 export const Navigation = () => {
@@ -7,7 +6,7 @@ export const Navigation = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<ShoppingPage />} />
+          <Route index element={<h1>Home Page</h1>} />
           <Route path="/about" element={<h1>About Page</h1>} />
           <Route path="/users" element={<h1>Users Page</h1>} />
         </Route>
