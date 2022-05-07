@@ -4,16 +4,13 @@ import {
   ProductTitle,
   ProductButtons,
 } from '../components';
-
+import { useShoppingCart } from '../hooks/useShoppingCart';
+import { products } from '../data/products';
 import './../styles/custom-styles.css';
 
-const product = {
-  id: '1',
-  title: 'Coffee mug - card',
-  img: './coffee-mug.png',
-};
-
 export const ShoppingPage = () => {
+  const { shoppingCart, onProductCountChange } = useShoppingCart();
+
   return (
     <div>
       <h1>Shopping Store</h1>
@@ -26,29 +23,49 @@ export const ShoppingPage = () => {
           flexWrap: 'wrap',
         }}
       >
-        {/* Compound Component Pattern: */}
-        <ProductCard
-          product={product}
-          className="bg-dark text-white"
-          style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }}
-        >
-          <ProductCard.Image className="custom-image" />
-          <ProductCard.Title title="Cafe" className="text-bold" />
-          <ProductCard.Buttons className="custom-buttons" />
-        </ProductCard>
+        {products.map(product => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            className="bg-dark text-white"
+            /*  */
+            // Value mantiene la sincronia entre las cards
+            value={shoppingCart[product.id]?.count || 0}
+            // Disparar EVENTOS en nuestro Component prefabricado: Eventos q emiten values
+            // onChange emite lo q recibe: recive onChangeArgs y los emite y pasa a la f(x) onProductCountChange - como el  .custom() del express-validator
+            onChange={onProductCountChange} //evento q se dispara con c/clic
+          >
+            <ProductImg className="custom-image" />
+            <ProductTitle className="text-bold" />
+            <ProductButtons className="custom-buttons" />
+          </ProductCard>
+        ))}
+      </div>
 
-        {/* Le gusta a FH: */}
-        <ProductCard product={product} className="bg-dark text-white">
-          <ProductImg className="custom-image" />
-          <ProductTitle title="Hello World" className="text-bold" />
-          <ProductButtons className="custom-buttons" />
-        </ProductCard>
+      {/* Buscamos implementar aldo asi: Value va a permitir tener el counter sincronizado.
+            <input 
+              value={counter}
+              onChange={e => setCounter(e.target.value)}
+            />
+        */}
 
-        <ProductCard product={product} style={{ backgroundColor: '#70D1F8' }}>
-          <ProductImg />
-          <ProductTitle title="Hello World" />
-          <ProductButtons style={{ display: 'flex', justifyContent: 'end' }} />
-        </ProductCard>
+      <div className="shopping-card">
+        {Object.values(shoppingCart).map(product => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            className="bg-dark text-white"
+            style={{ width: '100px' }}
+            value={product.count} // c/clic actualiza este value <- product.count
+            onChange={onProductCountChange}
+          >
+            <ProductImg className="custom-image" />
+            <ProductButtons
+              className="custom-buttons"
+              style={{ display: 'flex', justifyContent: 'center' }}
+            />
+          </ProductCard>
+        ))}
       </div>
     </div>
   );

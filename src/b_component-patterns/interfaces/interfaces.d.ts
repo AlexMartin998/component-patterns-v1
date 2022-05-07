@@ -21,3 +21,14 @@ export interface ProductCardHOCProps {
   Image: (Props: ProductImageProps) => JSX.Element;
   Title: (Props: ProductTitleProps) => JSX.Element;
 }
+
+// Eventos q se emitiran hacia FC externos: Emite el  onChange en este caso
+export interface onChangeArgs {
+  product: Product;
+  count: number;
+}
+
+//
+export interface ProductInCart extends Product {
+  count: number;
+}
