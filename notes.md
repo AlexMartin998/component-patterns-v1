@@ -69,3 +69,7 @@
           - La sincronia solo existira para el Card q tenga el  value={}
           - Si no tiene el value no haria falta reaccionar en el del cart al onChange?
             - Solo en el card principal
+
+
+  -- Renombrar  ramas  en git: En la rama q queremos renombrar
+    git branch -m new-name
