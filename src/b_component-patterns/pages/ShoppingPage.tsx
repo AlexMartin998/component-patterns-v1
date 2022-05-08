@@ -19,10 +19,26 @@ export const ShoppingPage = () => {
         key={product.id}
         product={product}
         className="bg-dark text-white"
+        initialValues={{
+          count: 6,
+          maxCount: 10,
+        }}
       >
-        <ProductImg className="custom-image" />
-        <ProductTitle className="text-bold" />
-        <ProductButtons className="custom-buttons" />
+        {({ isMaxCountReached, maxCount, reset, increaseBy }) => (
+          <>
+            <ProductImg className="custom-image" />
+            <ProductTitle className="text-bold" />
+            <ProductButtons className="custom-buttons" />
+
+            {/* Provided by my HOC: */}
+            {!isMaxCountReached && (
+              <button onClick={() => increaseBy(2)}>+2</button>
+            )}
+            <button onClick={() => increaseBy(-2)}>-2</button>
+            <button onClick={reset}>Reset</button>
+            <span>{maxCount}</span>
+          </>
+        )}
       </ProductCard>
     </div>
   );
