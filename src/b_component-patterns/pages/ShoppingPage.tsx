@@ -24,21 +24,23 @@ export const ShoppingPage = () => {
           maxCount: 10,
         }}
       >
-        {({ isMaxCountReached, maxCount, reset, increaseBy }) => (
-          <>
-            <ProductImg className="custom-image" />
-            <ProductTitle className="text-bold" />
-            <ProductButtons className="custom-buttons" />
+        {
+          ({ isMaxCountReached, maxCount, reset, increaseBy }) => (
+            <>
+              <ProductImg className="custom-image" />
+              <ProductTitle className="text-bold" />
+              <ProductButtons className="custom-buttons" />
 
-            {/* Provided by my HOC: */}
-            {!isMaxCountReached && (
-              <button onClick={() => increaseBy(2)}>+2</button>
-            )}
-            <button onClick={() => increaseBy(-2)}>-2</button>
-            <button onClick={reset}>Reset</button>
-            <span>{maxCount}</span>
-          </>
-        )}
+              {/* Provided by my HOC: */}
+              {!isMaxCountReached && (
+                <button onClick={() => increaseBy(2)}>+2</button>
+              )}
+              <button onClick={() => increaseBy(-2)}>-2</button>
+              <button onClick={reset}>Reset</button>
+              <span>{maxCount}</span>
+            </>
+          )
+        }
       </ProductCard>
     </div>
   );

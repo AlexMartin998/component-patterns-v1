@@ -50,6 +50,7 @@ export const ProductCard = ({
         increaseBy,
         product,
         maxCount: initialValues?.maxCount,
+        isMaxCountReached,
       }}
     >
       <div className={`${styles.productCard} ${className}`} style={style}>
