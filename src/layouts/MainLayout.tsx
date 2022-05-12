@@ -30,6 +30,31 @@ export const MainLayout = () => {
               Users
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/register" className={isActiveFx}>
+              Sign Up
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/formik-basic" className={isActiveFx}>
+              Formik - Basic
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/formik-yup" className={isActiveFx}>
+              Formik - Yup
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/formik-component" className={isActiveFx}>
+              Formik - Component
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/formik-abstraction" className={isActiveFx}>
+              Formik - Abstractions
+            </NavLink>
+          </li>
         </ul>
       </nav>
 
