@@ -34,7 +34,7 @@ formJSON.forEach(input => {
 const validationSchema = Yup.object({ ...requiredFields });
 
 export const DynamicForm = () => {
-  console.log(formJSON);
+  // console.log(formJSON);
 
   return (
     <div>
