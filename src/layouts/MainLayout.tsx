@@ -55,6 +55,17 @@ export const MainLayout = () => {
               Formik - Abstractions
             </NavLink>
           </li>
+
+          <li>
+            <NavLink to="/formik-register" className={isActiveFx}>
+              Formik - Register
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/formik-dynamic" className={isActiveFx}>
+              Formik - Dynamic
+            </NavLink>
+          </li>
         </ul>
       </nav>
 

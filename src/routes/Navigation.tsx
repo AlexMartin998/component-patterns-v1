@@ -2,11 +2,13 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { MainLayout } from '../layouts/MainLayout';
 import {
-  RegisterPage,
-  FormikBasicPage,
-  FormikYupPage,
-  FormikComponent,
+  DynamicForm,
   FormikAbstraction,
+  FormikBasicPage,
+  FormikComponent,
+  FormikYupPage,
+  RegisterFormikPage,
+  RegisterPage,
 } from './../03_forms/pages';
 
 export const Navigation = () => {
@@ -22,6 +24,9 @@ export const Navigation = () => {
           <Route path="formik-yup" element={<FormikYupPage />} />
           <Route path="formik-component" element={<FormikComponent />} />
           <Route path="formik-abstraction" element={<FormikAbstraction />} />
+
+          <Route path="formik-register" element={<RegisterFormikPage />} />
+          <Route path="formik-dynamic" element={<DynamicForm />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
